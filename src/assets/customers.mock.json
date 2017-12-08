@@ -1,0 +1,40 @@
+{
+  "customers": [
+    {
+      "name": "Acme Widgets International",
+      "customerNumber": 3565805,
+      "prospectNumber": 2012536898,
+      "effectiveDate": "06/01/2017",
+      "status": "U",
+      "completionPercentage": 50,
+      "lastActivity": "Something in some plan updated by someone"
+    },
+    {
+      "name": "Clampett Oil, LLP",
+      "customerNumber": 4557857,
+      "prospectNumber": 131311,
+      "effectiveDate": "02/15/2018",
+      "status": "U",
+      "completionPercentage": 0,
+      "lastActivity": ""
+    },
+    {
+      "name": "Cyberdyne Systems Corp.",
+      "customerNumber": 78784323,
+      "prospectNumber": 456678166,
+      "effectiveDate": "12/01/2017",
+      "status": "U",
+      "completionPercentage": 68,
+      "lastActivity": "Something in some plan updated by someone"
+    },
+    {
+      "name": "Globex, Inc.",
+      "customerNumber": 787423,
+      "prospectNumber": 236874,
+      "effectiveDate": "04/01/2017",
+      "status": "U",
+      "completionPercentage": 0,
+      "lastActivity": ""
+    }
+  ]
+}

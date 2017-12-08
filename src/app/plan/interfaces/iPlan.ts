@@ -1,0 +1,46 @@
+import { IMeta } from './iMeta';
+
+export interface IPlan {
+  _id: string;
+  PLN_ID: number;
+  CVR_ID: number;
+  EFF_DT: string;
+  CRT_TS: string;
+  LST_UPDT_TS: string;
+  ORIG_EFF_DT: string;
+  CUST_SPEC_IND: string;
+  PROD_MDL_VER_ID: string;
+  PROD_MDL_NM: string;
+  STTS_DSCR: string;
+  ACCD_AND_HLTH_PLN_PRVD: any;
+  ADMN: any;
+  ADMN_CNTCT: any;
+  ADMN_CUST_NUM_ASGN: any;
+  ADMN_PY_MTHD: any;
+  BEN: any;
+  CI_PLN_PRVD: any;
+  CLM_PROC_SPRT: any;
+  CNTCT: any;
+  CUST: any;
+  CVR: any;
+  CVR_CONT_PRVD: any;
+  DTL: any;
+  ELGBL_CLASS: any;
+  ELGBL_TYP: any;
+  ENRL: any;
+  ERISA_PLN: any;
+  LGL_PLN_ADMN: any;
+  LIF_PLN_PRVD: any;
+  LOG: any;
+  OWNG_ENTY: any;
+  PLN: any;
+  PLN_AUDT: any;
+  PRVD: any;
+  QLF_EVNT: any;
+  TERR_REG: any;
+  TRM_RUL: any;
+  VSN_PLN_SRV: any;
+  VSN_PLN_SRV_NETWRK: any;
+  XTRA_TERR_GVRN_BODY: any;
+  meta: IMeta;
+}

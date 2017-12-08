@@ -1,0 +1,399 @@
+{
+  "id": "QUOTE_VIEW",
+  "version": "1.0.0",
+  "title": "Insurance Quote",
+  "sections": {
+    "owner": {
+      "order": 1,
+      "label": "Owner Information",
+      "state": {
+        "isHidden": false,
+        "isDisabled": false
+      },
+      "questions": {
+        "ownerFirstName": {
+          "order": 1,
+          "model": "owner.firstName",
+          "label": "First Name",
+          "control": {
+            "type": "text",
+            "hint": "",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": true,
+              "isValid": true
+            }
+          },
+          "rules": [
+            {
+              "oneOf": [
+                {
+                  "condition": "this.owner.firstName === 'Nick'",
+                  "action": [
+                    "setById('ownerLastName', 'Nguyen')",
+                    "setById('ownerDob', '06/01/85')",
+                    "setById('ownerEmail','nick@demo.com')",
+                    "setById('ownerPhone','919-907-4298')",
+                    "let c1 = getControl('ownerFirstName')",
+                    "c1.hint = 'Hi Nick. Welcome back!'"
+                  ]
+                },
+                {
+                  "action": [
+                    "setById('ownerLastName', '')",
+                    "setById('ownerDob', '')",
+                    "setById('ownerEmail', '')",
+                    "setById('ownerPhone', '')",
+                    "let c1 = getControl('ownerFirstName')",
+                    "c1.hint = \"You're not Nick. Fill out the rest of this form!\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "schema": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 25
+          }
+        },
+        "ownerLastName": {
+          "order": 2,
+          "model": "owner.lastName",
+          "label": "Last Name",
+          "schema": {
+            "type": "string"
+          },
+          "control": {
+            "type": "text",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": true,
+              "isValid": true
+            }
+          }
+        },
+        "ownerDob": {
+          "order": 3,
+          "model": "owner.dob",
+          "label": "Date of Birth",
+          "schema": {
+            "format": "date-time"
+          },
+          "control": {
+            "type": "date",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            }
+          }
+        },
+        "ownerEmail": {
+          "order": 4,
+          "model": "owner.email",
+          "label": "Email Address",
+          "control": {
+            "type": "text",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            }
+          },
+          "schema": {
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "ownerPhone": {
+          "order": 5,
+          "model": "owner.phone",
+          "label": "Phone Number",
+          "control": {
+            "type": "number",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            }
+          },
+          "schema": {
+            "type": "string",
+            "pattern": "1?[\\s-]?\\(?(\\d{3})\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}"
+          }
+        }
+      }
+    },
+    "insured": {
+      "order": 2,
+      "label": "Insured Information",
+      "state": {
+        "isHidden": false,
+        "isDisabled": false
+      },
+      "questions": {
+        "insuredFirstName": {
+          "order": 2,
+          "model": "insured.firstName",
+          "label": "First Name",
+          "schema": {
+            "type": "string"
+          },
+          "control": {
+            "type": "text",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": true,
+              "isValid": true
+            }
+          }
+        },
+        "insuredLastName": {
+          "order": 3,
+          "model": "insured.lastName",
+          "label": "Last Name",
+          "schema": {
+            "type": "string"
+          },
+          "control": {
+            "type": "text",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": true,
+              "isValid": true
+            }
+          }
+        },
+        "insuredDob": {
+          "order": 4,
+          "model": "insured.dob",
+          "label": "Date of Birth",
+          "schema": {
+            "format": "date-time"
+          },
+          "control": {
+            "type": "date",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            }
+          },
+          "rules": [
+            {
+              "oneOf": [
+                {
+                  "condition": "!isNil(this.insured.dob)",
+                  "action": "this.insured.age = getAge(this.insured.dob)"
+                },
+                {
+                  "action": "this.insured.age = 0"
+                }
+              ]
+            }
+          ]
+        },
+        "insuredAge": {
+          "order": 5,
+          "model": "insured.age",
+          "label": "Age",
+          "schema": {
+            "type": "number"
+          },
+          "control": {
+            "type": "label",
+            "state": {
+              "isHidden": false,
+              "isDisabled": true,
+              "isRequired": false,
+              "isValid": true
+            }
+          }
+        },
+        "insuredEmail": {
+          "order": 6,
+          "model": "insured.email",
+          "label": "Email Address",
+          "control": {
+            "type": "text",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            }
+          },
+          "schema": {
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "insuredPhone": {
+          "order": 7,
+          "model": "insured.phone",
+          "label": "Phone Number",
+          "control": {
+            "type": "number",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            }
+          },
+          "schema": {
+            "type": "string",
+            "pattern": "1?[\\s-]?\\(?(\\d{3})\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}"
+          }
+        },
+        "sameAsOwner": {
+          "order": 1,
+          "model": "sameAsOwner",
+          "label": "Same as owner?",
+          "schema": {
+            "type": "boolean"
+          },
+          "control": {
+            "type": "checkbox",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            }
+          },
+          "rules": [
+            {
+              "oneOf": [
+                {
+                  "condition": "this.sameAsOwner === true",
+                  "action": [
+                    "const cache = copyProps(this.insured)",
+                    "this.insured.firstName = this.owner.firstName",
+                    "this.insured.lastName = this.owner.lastName",
+                    "this.insured.dob = this.owner.dob",
+                    "this.insured.email = this.owner.email",
+                    "this.insured.phone = this.owner.phone",
+                    "this.insured._cache = cache",
+                    "let c1 = getControl('insuredFirstName')",
+                    "c1.state.isDisabled = true",
+                    "let c2 = getControl('insuredLastName')",
+                    "c2.state.isDisabled = true",
+                    "let c3 = getControl('insuredDob')",
+                    "c3.state.isDisabled = true",
+                    "let c4 = getControl('insuredEmail')",
+                    "c4.state.isDisabled = true",
+                    "let c5 = getControl('insuredPhone')",
+                    "c5.state.isDisabled = true"
+                  ]
+                },
+                {
+                  "condition": "!isNil(this.insured._cache)",
+                  "action": [
+                    "this.insured.firstName = this.insured._cache.firstName",
+                    "this.insured.lastName = this.insured._cache.lastName",
+                    "this.insured.dob = this.insured._cache.dob",
+                    "this.insured.email = this.insured._cache.email",
+                    "this.insured.phone = this.insured._cache.phone",
+                    "let c1 = getControl('insuredFirstName')",
+                    "c1.state.isDisabled = false",
+                    "let c2 = getControl('insuredLastName')",
+                    "c2.state.isDisabled = false",
+                    "let c3 = getControl('insuredDob')",
+                    "c3.state.isDisabled = false",
+                    "let c4 = getControl('insuredEmail')",
+                    "c4.state.isDisabled = false",
+                    "let c5 = getControl('insuredPhone')",
+                    "c5.state.isDisabled = false"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "smoker": {
+          "order": 8,
+          "model": "insured.smoker",
+          "label": "Do you smoke?",
+          "schema": {
+            "type": "string"
+          },
+          "control": {
+            "type": "radio",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            },
+            "choices": [
+              {
+                "label": "Yes",
+                "value": "Y"
+              },
+              {
+                "label": "No",
+                "value": "N"
+              }
+            ]
+          },
+          "rules": [
+            {
+              "oneOf": [
+                {
+                  "condition": "this.insured.smoker === 'Y'",
+                  "action": [
+                    "let section = getSection('lifestyle')",
+                    "section.state.isHidden = false"
+                  ]
+                },
+                {
+                  "action": [
+                    "let section = getSection('lifestyle')",
+                    "section.state.isHidden = true"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "lifestyle": {
+      "order": 3,
+      "label": "Lifestyle Information",
+      "state": {
+        "isHidden": true,
+        "isDisabled": false
+      },
+      "questions": {
+        "smokeDate": {
+          "order": 1,
+          "model": "insured.smokeDate",
+          "label": "When did you start smoking?",
+          "schema": {
+            "format": "date-time"
+          },
+          "control": {
+            "type": "date",
+            "state": {
+              "isHidden": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isValid": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+div {
+  padding: 22px 0;
+
+  a {
+    font-family: Arial;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    text-align: left;
+    color: #797979;
+
+    > span:last-child {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.snackbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  max-height: 48px;
+  background-color: #333;
+  text-align: right;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
+  &[hidden] {
+    display: block;
+    max-height: 0;
+  }
+
+  p {
+    opacity: 0.6;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.43;
+    text-align: right;
+    color: #ffffff;
+    margin: 14px 24px;
+    display: inline-block;
+  }
+
+  button {
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 17px 53px;
+    border: 0;
+    width: 144px;
+    height: 48px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 0;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+}

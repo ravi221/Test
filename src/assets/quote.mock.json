@@ -1,0 +1,18 @@
+{
+  "owner": {
+    "firstName": "Nick",
+    "lastName": "Nguyen",
+    "dob": "06/01/1985",
+    "phone": "919-907-4298",
+    "email": "nick@demo.com"
+  },
+  "insured": {
+    "firstName": "",
+    "lastName": "",
+    "dob": "",
+    "phone": "",
+    "email": "",
+    "smoker": "",
+    "smokeDate": ""
+  }
+}

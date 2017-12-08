@@ -1,0 +1,20 @@
+@import "../main-nav-menu.component";
+
+.main-nav-header {
+  padding: 0 $main-nav-padding;
+  margin-bottom: 35px;
+  width: 100%;
+}
+
+.main-nav-content {
+  padding: 0 $main-nav-padding;
+  width: 100%;
+}
+
+.horizontal-rule {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  opacity: 0.1;
+  background-color: #000000;
+}

@@ -1,0 +1,68 @@
+@media screen and (min-width:768px){
+  .navbar-brand-centered {
+    position: absolute;
+    left: 45%;
+    display: block;
+    padding:0;
+    text-align: center;
+    outline: none;
+  }
+  .navbar>.container .navbar-brand-centered,
+  .navbar>.container-fluid .navbar-brand-centered {
+    margin-left: -80px;
+  }
+}
+.navbar {
+  min-height: 64px;
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 16px;
+}
+.navbar-default {
+  background-color: #fff;
+  border: 0;
+  box-shadow: 0 2px 0 0 #f9f9f9;
+}
+.metlife-brand {
+  background: url("../../../../content/img/metlife-logo.svg") no-repeat;
+  width: 131px;
+  height: 28px;
+  background-size: contain;
+  display: block;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #333;
+  padding: 0;
+  margin-right: 24px;
+  font-family: Arial;
+  font-size: 10px;
+  text-align: left;
+
+  &.active,
+  &:hover {
+    text-decoration: underline;
+  }
+  > .nav-icons {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    vertical-align: middle;
+
+    &.main-menu {
+      background-image: url("../../../../content/img/menu-icon.svg");
+    }
+    &.flags {
+      background-image: url("../../../../content/img/flag-on.svg");
+    }
+    &.history {
+      background-image: url("../../../../content/img/clock-icon.svg");
+    }
+    &.search {
+      background-image: url("../../../../content/img/search-icon.svg");
+    }
+  }
+}

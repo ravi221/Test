@@ -1,0 +1,525 @@
+.controls {
+  padding: 32px 32px 0 32px;
+
+  button:first-child {
+    margin-right: 16px;
+  }
+}
+
+// buttons
+.btn {
+  text-transform: uppercase;
+  font-family: HelveticaNeue;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-radius: 2px;
+  padding: 11px 20px;
+  border: 2px solid transparent;
+  outline: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 4px 1px $dark-gray;
+    outline: none;
+  }
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus,
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus {
+    background-color: $btn-disabled;
+    color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0;
+    text-decoration: none;
+    border-color: $btn-disabled;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.btn-primary {
+  background-color: $btn-primary;
+  color: $dark-gray;
+  border-color: $btn-primary;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $btn-primary-hover;
+    color: $dark-gray;
+    border-color: $btn-primary-hover;
+  }
+}
+
+.btn-secondary {
+  background-color: $btn-secondary;
+  color: $white;
+  border-color: $btn-secondary;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $btn-secondary-hover;
+    color: $white;
+    border-color: $btn-secondary-hover;
+  }
+}
+
+.btn-tertiary {
+  background-color: $btn-tertiary;
+  color: $metlife-blue;
+  border-color: $metlife-blue;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $metlife-blue;
+    color: $white;
+  }
+}
+
+.btn-muted {
+  color: $muted;
+}
+
+// input groups and inputs
+.control-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  .control-group {
+    border-bottom: solid 1px rgba(51, 51, 51, 0.1);
+    padding: 16px 32px 16px 0;
+
+    .control-label
+    {
+      margin-left: 26px;
+    }
+
+    label {
+      margin-left: 75px;
+    }
+
+    .control-number {
+      font-family: Arial;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.5;
+      text-align: right;
+      color: $dark-gray;
+      display: inline-block;
+      width: 45px
+    }
+
+    .control-hint, .control-errors {
+      opacity: 0.6;
+      font-family: Arial;
+      font-size: 12px;
+      line-height: 1.67;
+      text-align: left;
+      color: $dark-gray;
+      margin-left: 75px;
+    }
+
+    .control-errors {
+      opacity: 1;
+      color: $error-foreground;
+      margin-bottom: 0;
+    }
+
+    .input-control {
+      display: block;
+      margin-left: 75px;
+      min-width: 300px;
+    }
+
+    .radio-group {
+      display: block;
+      margin-left: 75px;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.control-group {
+  padding: 16px 32px;
+
+  &:disabled {
+    background-color: $gray-bg;
+    opacity: 0.6;
+  }
+  &.has-errors {
+    background-color: $error-background;
+  }
+}
+
+.control-label {
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  color: $dark-gray;
+  font-weight: normal;
+  margin-right: 12px;
+}
+
+.input-control {
+  font-family: Arial;
+  font-size: 13px;
+  text-align: left;
+  color: $medium-gray;
+  padding: 13px 12px 12px 12px;
+  height: 40px;
+  border-radius: 2px;
+  border: solid 1px $input-border;
+  background-color: $white;
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $metlife-blue;
+
+    &:disabled {
+      border-color: $input-border;
+    }
+  }
+}
+
+// checkbox and radio
+.checkbox-control,
+.radio-control {
+  * {
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+      box-sizing: border-box;
+    }
+  }
+
+  &.radio-control-inline,
+  &.checkbox-control-inline {
+    display: inline-block;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    + label {
+      position: relative;
+      padding: 5px 5px 5px 2em;
+      vertical-align: middle;
+      user-select: none;
+      cursor: pointer;
+      margin-right: 5px;
+
+      &:before {
+        box-sizing: content-box;
+        content: '';
+        color: $metlife-blue3;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        margin-top: -9px;
+        border: 2px solid $light-gray;
+        text-align: center;
+        transition: all 0.4s ease;
+      }
+
+      &:after {
+        box-sizing: content-box;
+        content: '';
+        background-color: $metlife-blue3;
+        position: absolute;
+        top: 50%;
+        left: 4px;
+        width: 10px;
+        height: 10px;
+        margin-top: -5px;
+        transform: scale(0);
+        transform-origin: 50%;
+        transition: transform 200ms ease-out;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      + label:before {
+        border-color: $metlife-blue3;
+        background-color: $white;
+      }
+    }
+
+    &:active {
+      + label:before {
+        transition-duration: 0s;
+      }
+    }
+
+    &:disabled {
+
+      + label:before,
+      &:focus + label:before,
+      &:checked + label:before,
+      &:hover + label:before {
+        border-color: $input-disabled;
+        background-color: $input-disabled;
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    + label {
+      &:after {
+        background-color: transparent;
+        top: 50%;
+        left: 4px;
+        width: 8px;
+        height: 3px;
+        margin-top: -4px;
+        border-style: solid;
+        border-color: $white;
+        border-width: 0 0 3px 3px;
+        border-image: none;
+        transform: rotate(-45deg) scale(0);
+      }
+    }
+
+    &:checked {
+      + label {
+        &:after {
+          content: '';
+          transform: rotate(-45deg) scale(1);
+          transition: transform 200ms ease-out;
+        }
+        &:before {
+          animation: borderscale 200ms ease-in;
+          background: $metlife-blue3;
+          border: 2px solid $metlife-blue3;
+        }
+      }
+    }
+  }
+
+  input[type="radio"] {
+    &:checked {
+      + label:after {
+        transform: scale(1);
+      }
+      + label:before {
+        border: 2px solid $metlife-blue3;
+      }
+    }
+    + label {
+
+      margin-left: 0;
+
+      &:before,
+      &:after {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+// toggle
+.toggle-control {
+  input[type="checkbox"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    + label {
+      position: relative;
+      padding: 5px 5px 5px 40px;
+      vertical-align: middle;
+      user-select: none;
+      cursor: pointer;
+      display: block;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        left: 0;
+        content: '';
+        color: $metlife-blue3;
+        width: 34px;
+        height: 14px;
+        border-radius: 50px;
+        text-align: center;
+        transition: all 0.4s;
+        background-color: rgba(34, 31, 31, 0.26);;
+      }
+
+      &:after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        left: 0;
+        content: '';
+        background-color: $off-white;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 0.5px;
+        border-image-source: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0));
+        border-image-slice: 1;
+        transition: all 0.2s;
+        box-sizing: border-box;
+      }
+    }
+
+    &:checked {
+      + label {
+        &:before {
+          opacity: 0.5;
+          background-color: $metlife-blue3;
+        }
+        &:after {
+          left: 15px;
+          border-color: $metlife-blue3;
+          background-color: $metlife-blue3;
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
+          border-style: solid;
+          border-width: 0.5px;
+          border-image-source: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0));
+          border-image-slice: 1;
+        }
+      }
+    }
+
+    &:disabled {
+      + label {
+        cursor: default;
+        &:before {
+          box-shadow: inset 0 0 0 10px $light-gray;
+        }
+        &:after {
+          border-color: $light-gray;
+        }
+      }
+
+      &:checked {
+        + label {
+          &:before {
+            box-shadow: inset 0 0 0 10px $input-disabled;
+          }
+          &:after {
+            border-color: $input-disabled;
+            background-color: $input-disabled;
+          }
+        }
+      }
+    }
+  }
+}
+
+// datepicker
+.mat-datepicker {
+  .mat-input-element {
+    font-family: Arial;
+    font-size: 13px;
+    text-align: left;
+    color: $medium-gray;
+    padding: 13px 12px 12px 12px;
+    height: 40px;
+    border-radius: 2px;
+    border: solid 1px $input-border;
+    background-color: $white;
+    width: 250px;
+
+    &:focus,
+    &:active {
+      outline: none;
+      border-color: $metlife-blue;
+
+      &:disabled {
+        border-color: $input-border;
+      }
+    }
+  }
+  .mat-input-underline {
+    .mat-input-ripple {
+      display: none;
+      height: 0;
+    }
+  }
+  .mat-input-suffix {
+
+    position: relative;
+    top: 8px;
+    right: 30px;
+
+    .mat-datepicker-toggle {
+      width: 24px;
+      height: 42px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.mat-datepicker-content {
+  background-color: $white;
+
+  .mat-calendar-body-cell-content {
+    color: $dark-gray;
+    border-color: transparent;
+
+    &:hover {
+      background-color: $gray-bg;
+    }
+
+    &.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+      border-color: $light-gray;
+    }
+
+    &.mat-calendar-body-selected {
+      background-color: $metlife-blue2;
+      color: $white;
+    }
+  }
+}
+
+

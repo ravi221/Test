@@ -1,0 +1,53 @@
+.bar {
+  padding: 29px 0 28px 0;
+
+  ul {
+
+    display: inline-block;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      font-family: Arial;
+      font-size: 10px;
+      font-weight: bold;
+      line-height: 1.6;
+      text-align: left;
+      text-transform: uppercase;
+      margin-right: 24px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      > a {
+        font-weight: 400;
+        color: #b0b1b3;
+
+        &.active {
+          color: #007abc;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .menus {
+    height: 40px;
+    text-transform: uppercase;
+    float: right;
+    margin-right: 18px;
+
+    a {
+      color: #b0b1b3;
+      font-weight: 500;
+      font-size: 13px;
+    }
+  }
+
+  .material-icons {
+    vertical-align: bottom;
+  }
+}

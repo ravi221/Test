@@ -1,0 +1,13 @@
+<div class="col-md-2">
+  <dynamic-sections [sections]="sectionConfig" [model]="entity" (sectionChanged)="switchSection($event)"></dynamic-sections>
+</div>
+<div class="card col-md-10">
+  <dynamic-form
+    [config]="activeSection"
+    [model]="entity">
+  </dynamic-form>
+  <div class="controls text-right">
+    <button class="btn btn-secondary" (click)="validate()">VALIDATE</button>
+  </div>
+</div>
+<app-snack-bar [model]="entity" (onSaveClicked)="save()"></app-snack-bar>

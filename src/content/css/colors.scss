@@ -1,0 +1,40 @@
+// main palette
+$white: #fff;
+$off-white: #f1f1f1;
+$black: #000;
+$dark-gray: #333;
+$medium-gray: #666;
+$light-gray: #c6c5c5;
+$rose-pink: #db0a5b;
+$teal: #00a3ac;
+$yellow: #ffc600;
+$blue: #008edd;
+$dark-blue: #0060a2;
+$red: #EB4646;
+$light-red: #F5D0D0;
+$gray-bg: #f9f9f9;
+$muted: #a7a8aa;
+
+// metlife blues
+$metlife-blue: #007abc;
+$metlife-blue2: #0061a0;
+$metlife-blue3: #0079bf;
+$metlife-green: #a4ce4e;
+$metlife-green2: #b7dd58;
+
+//button colors
+$btn-primary: $metlife-green;
+$btn-primary-hover: $metlife-green2;
+$btn-secondary: $metlife-blue;
+$btn-secondary-hover: $metlife-blue2;
+$btn-tertiary: $white;
+$btn-disabled: #ccc;
+
+// alerts
+$error-foreground: $red;
+$error-background: $light-red;
+$success-background: $metlife-green;
+
+// inputs
+$input-border: #bbbbbb;
+$input-disabled: #8e8e8e;
